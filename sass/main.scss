@@ -6,6 +6,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
    }
 
 //VARIABLES//
@@ -13,6 +14,9 @@
 $color-one: #9356DC;
 $color-two: #FF79DA;
 $color-three: #99E2D0;
+$content-background-color: rgb(230, 230, 230);
+$location-background-color: rgb(221, 221, 221);
+$footer-background-color: rgb(59, 59, 59);
 
 //FIN DES VARIABLES//
 
@@ -29,3 +33,92 @@ a {
     color: black;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    & .header__logo {
+        width: 40%;
+        height: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    & .header__form {
+        background-color: $location-background-color;
+        width: 100%;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: inset 0px 3px 3px #c6c6c6;
+        & .header__form--fa {
+            margin-right: 15px;
+        }
+        & .header__form--input{
+            background-color: inherit;
+            border: hidden;
+            width: 132px;
+            font-size: 15px;
+            color: #404040;
+            font-weight: bold;
+        }
+    }
+    & .header__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: $content-background-color;
+        padding-top: 20px;
+        & .header__title, .header__text {
+            text-align: center;
+        }
+        & .header__title {
+            width: 70%;
+            font-size: x-large;
+            margin-bottom: 0px;
+        }
+        & .header__text {
+            width: 85%;
+            margin-bottom: 30px;
+            color: rgb(92, 92, 92);
+        }
+        & .header__button {
+            background-image: linear-gradient(to top, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+            color: white;
+            border: transparent;
+            border-radius: 25px;
+            width: 60%;
+            height: 48px;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 17px 25px;
+    color: white;
+    background-color: $footer-background-color;
+    & .footer__logo {
+        width: 30%;
+        height: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        filter: invert(1);
+    }
+    & li {
+        margin-bottom: 8px;
+        & span {
+            margin-right: 13px;
+        }
+    }
+    
+}

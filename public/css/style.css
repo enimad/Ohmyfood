@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&family=Shrikhand&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -14,6 +15,95 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+header .header__logo {
+  width: 40%;
+  height: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+header .header__form {
+  background-color: #dddddd;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0px 3px 3px #c6c6c6;
+}
+header .header__form .header__form--fa {
+  margin-right: 15px;
+}
+header .header__form .header__form--input {
+  background-color: inherit;
+  border: hidden;
+  width: 132px;
+  font-size: 15px;
+  color: #404040;
+  font-weight: bold;
+}
+header .header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #e6e6e6;
+  padding-top: 20px;
+}
+header .header__content .header__title, header .header__content .header__text {
+  text-align: center;
+}
+header .header__content .header__title {
+  width: 70%;
+  font-size: x-large;
+  margin-bottom: 0px;
+}
+header .header__content .header__text {
+  width: 85%;
+  margin-bottom: 30px;
+  color: #5c5c5c;
+}
+header .header__content .header__button {
+  background-image: linear-gradient(to top, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  color: white;
+  border: transparent;
+  border-radius: 25px;
+  width: 60%;
+  height: 48px;
+  margin-bottom: 50px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 17px 25px;
+  color: white;
+  background-color: #3b3b3b;
+}
+footer .footer__logo {
+  width: 30%;
+  height: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  filter: invert(1);
+}
+footer li {
+  margin-bottom: 8px;
+}
+footer li span {
+  margin-right: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */
