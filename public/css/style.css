@@ -24,9 +24,9 @@ header {
   margin-bottom: 20px;
 }
 header .header__logo {
-  width: 40%;
+  width: 45%;
   height: auto;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 15px;
 }
 header .header__form {
@@ -61,8 +61,9 @@ header .header__content .header__title, header .header__content .header__text {
 }
 header .header__content .header__title {
   font-family: "Shrikhand", "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 25px;
   margin: 20px;
+  font-weight: 100;
   width: 70%;
   margin-top: 30px;
   margin-bottom: 0px;
@@ -89,8 +90,9 @@ main {
 }
 main .main__first-content .main__first-content-title {
   font-family: "Shrikhand", "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 25px;
   margin: 20px;
+  font-weight: 100;
 }
 main .main__first-content .main__first-content-nav {
   margin-bottom: 45px;
@@ -154,8 +156,9 @@ main .main__second-content {
 }
 main .main__second-content .main__second-content-title {
   font-family: "Shrikhand", "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 25px;
   margin: 20px;
+  font-weight: 100;
   margin-top: 50px;
 }
 main .main__second-content .main__second-content-card {
@@ -244,6 +247,103 @@ footer li {
 }
 footer li span {
   margin-right: 13px;
+}
+
+.header-menu .header-menu-fa {
+  position: relative;
+  bottom: 40px;
+  right: 135px;
+  font-size: 19px;
+}
+.header-menu .header-menu-img-container {
+  width: 100%;
+  margin-top: -20px;
+}
+.header-menu .header-menu-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-menu {
+  background-color: #ebebeb;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  position: relative;
+  margin-top: -65px;
+}
+.main-menu .main-menu-title-container {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  margin-bottom: -15px;
+}
+.main-menu .main-menu-title-container .main-menu-title {
+  font-family: "Shrikhand", "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin: 20px;
+  font-weight: 100;
+  margin: 20px 15px;
+}
+.main-menu .main-menu-title-container .main-menu-title-fa {
+  font-size: x-large;
+  font-weight: 100;
+  margin-left: 20px;
+}
+.main-menu .main-menu-section-title {
+  margin: 25px 15px 15px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.main-menu .main-menu-section-title-deco {
+  border-top: solid #99E2D0;
+  height: 0%;
+  width: 40px;
+  margin: -13px 15px 8px;
+}
+.main-menu .main-menu-choices {
+  background-color: white;
+  padding: 0 10px;
+  box-shadow: 0px 2px 7px #d6d6d6;
+  margin: 5px 15px;
+  border-radius: 15px;
+}
+.main-menu .main-menu-choices h2 {
+  margin-top: 12px;
+  margin-bottom: -7px;
+  font-size: 16px;
+}
+.main-menu .main-menu-choices .main-menu-choices-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-menu .main-menu-choices .main-menu-choices-details p {
+  font-size: 13px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.main-menu .main-menu-choices .main-menu-choices-details :nth-child(2) {
+  font-weight: bold;
+  font-size: 14px;
+}
+.main-menu .main-menu-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.main-menu .main-menu-btn-container .main-menu-btn {
+  background-image: linear-gradient(to top, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  color: white;
+  border: transparent;
+  border-radius: 25px;
+  width: 60%;
+  min-width: 35%;
+  height: 48px;
+  margin-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

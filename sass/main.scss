@@ -9,7 +9,7 @@
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
    }
 
-//VARIABLES//
+// VARIABLES //
 
 $color-one: #9356DC;
 $color-two: #FF79DA;
@@ -18,17 +18,29 @@ $content-background-color: rgb(235, 235, 235);
 $location-background-color: rgb(221, 221, 221);
 $footer-background-color: rgb(59, 59, 59);
 
-//FIN DES VARIABLES//
+// FIN DES VARIABLES //
 
-//MIXINS *//
+// MIXINS * //
 
 @mixin title-font {
     font-family: 'Shrikhand', 'Roboto', Arial, Helvetica, sans-serif;
-    font-size: 22px;
+    font-size: 25px;
     margin: 20px;
+    font-weight: 100;
   }
 
-//FIN DES MIXINS *//
+@mixin purple-btn {
+    background-image: linear-gradient(to top, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+    color: white;
+    border: transparent;
+    border-radius: 25px;
+    width: 60%;
+    min-width: 35%;
+    height: 48px;
+    margin-bottom: 50px;
+}
+
+// FIN DES MIXINS * //
 
 
 
@@ -51,9 +63,9 @@ header {
     align-items: center;
     margin-bottom: 20px;
     & .header__logo {
-        width: 40%;
+        width: 45%;
         height: auto;
-        margin-top: 15px;
+        margin-top: 20px;
         margin-bottom: 15px;
     }
     & .header__form {
@@ -97,14 +109,7 @@ header {
             color: rgb(92, 92, 92);
         }
         & .header__button {
-            background-image: linear-gradient(to top, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
-            color: white;
-            border: transparent;
-            border-radius: 25px;
-            width: 60%;
-            min-width: 35%;
-            height: 48px;
-            margin-bottom: 50px;
+            @include purple-btn;
         }
     }
 }
@@ -268,3 +273,105 @@ footer {
     }
     
 }
+
+// CSS DES MENUS //
+
+// MIXINS DES MENUS //
+
+
+
+// FIN DES MIXINS DES MENUS //
+
+.header-menu {
+    & .header-menu-fa {
+        position: relative;
+        bottom: 40px;
+        right: 135px;
+        font-size: 19px;
+    }
+    & .header-menu-img-container {
+        width: 100%;
+        margin-top: -20px;
+    }
+    & .header-menu-img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.main-menu {
+    background-color: $content-background-color;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    position: relative;
+    margin-top: -65px;
+    & .main-menu-title-container {
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+        margin-bottom: -15px;
+        & .main-menu-title {
+            @include title-font;
+            margin: 20px 15px;
+        }
+        & .main-menu-title-fa {
+            font-size: x-large;
+            font-weight: 100;
+            margin-left: 20px;
+        }
+    }
+    & .main-menu-section-title {
+        margin: 25px 15px 15px;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    & .main-menu-section-title-deco {
+        border-top: solid $color-three;
+        height: 0%;
+        width: 40px;
+        margin: -13px 15px 8px;
+    }
+    & .main-menu-choices {
+        background-color: white;
+        padding: 0 10px;
+        box-shadow: 0px 2px 7px #d6d6d6;
+        margin: 5px 15px;
+        border-radius: 15px;
+        & h2 {
+            margin-top: 12px;
+            margin-bottom: -7px;
+            font-size: 16px;
+        }
+        & .main-menu-choices-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            & p {
+                font-size: 13px;
+                margin-bottom: 10px;
+                max-width: 80%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+        & .main-menu-choices-details :nth-child(2) {
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+    & .main-menu-btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        & .main-menu-btn {
+            @include purple-btn;
+        }
+    }
+}
+
+
+
+
+// FIN DU CSS DES MENUS //
