@@ -124,6 +124,9 @@ header {
             @include tablet-only {
                 width: 45%;
             }
+            @include desktop-only {
+                width: 35%;
+            }
         }
     }
 }
@@ -157,7 +160,16 @@ header {
 main {
     display: flex;
     flex-direction: column;
+    &.main--row {
+        @include desktop-only {
+            flex-direction: row
+        }
+    }
     & .main__first-content {
+        @include desktop-only {
+            width: 30%;
+            margin-left: 20px;
+        }
         & .main__first-content-title {
             @include index-title-font;
         }
@@ -167,12 +179,19 @@ main {
                 display: flex;
                 justify-content: space-around;
             }
+            @include desktop-only {
+                display: flex;
+                flex-wrap: wrap;
+            }
             & .main__first-content-nav--classic-card {
                 display: flex;
                 align-items: center;
                 margin: 0 20px;
                 @include tablet-only {
                     width: 220px;
+                }
+                @include desktop-only {
+                    width: 300px;
                 }
                 & .main__first-content-nav--classic-card-number {
                     margin-right: -20px;
@@ -200,15 +219,25 @@ main {
     }
     .main__second-content {
         background-color: $content-background-color;
+        @include desktop-only {
+            background-color: white;
+        }
         & .main__second-content-title {
             @include index-title-font;
             margin-top: 50px;
+            @include desktop-only {
+                margin-top: 20px;
+            }
         }
         & .main__second-content-cards-container {
             @include tablet-only {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
+            }
+            @include desktop-only {
+                display: flex;
+                flex-wrap: wrap;
             }
             & .main__second-content-card {
                 display: flex;
@@ -218,6 +247,9 @@ main {
                 height: 250px;
                 @include tablet-only {
                     width: 335px;
+                }
+                @include desktop-only {
+                    width: 300px;
                 }
                 & .container-position-new-and-heart {
                     display: flex;
@@ -293,6 +325,9 @@ footer {
     @include tablet-only {
         align-items: center;
     }
+    @include desktop-only {
+        align-items: center;
+    }
     & .footer__logo {
         width: 120px;
         height: auto;
@@ -307,6 +342,14 @@ footer {
         @include tablet-only {
             display: flex;
             gap: 35px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        @include desktop-only {
+            display: flex;
+            gap: 135px;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
     }
     & li {
@@ -376,6 +419,11 @@ footer {
     border-top-right-radius: 35px;
     position: relative;
     margin-top: -60px;
+    @include desktop-only {
+        &.main-menu--desktop {
+            padding: 0 150px;
+        }
+    }
     & .main-menu-title-container {
         display: flex;
         align-items: center;
@@ -410,6 +458,9 @@ footer {
             color: adjust-color($color: $color-three, $lightness: -45%);
             font-weight: bold;
         }
+        @include desktop-only {
+            font-size: 18px;
+        }
     }
     & .main-menu-section-title-deco {
         border-top: solid $color-three;
@@ -418,6 +469,9 @@ footer {
         margin: -13px 15px 8px;
         @include tablet-only {
             display: none;
+        }
+        @include desktop-only {
+            margin: -13px 15px -5px;
         }
     }
     & .main-menu-sections-container {
@@ -435,16 +489,26 @@ footer {
             @include tablet-only {
                 width: 315px;
             }
+            @include desktop-only {
+                margin: 30px 15px;
+            }
             & h2 {
                 margin-top: 0;
                 margin-bottom: -7px;
                 font-size: 16px;
                 max-width: 80%;
+                @include desktop-only {
+                    margin: 0 25px -7px;
+                    max-width: 100%;
+                }
             }
             & .main-menu-choices-details {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                @include desktop-only {
+                    margin: 0 25px;
+                }
                 & p {
                     font-size: 13px;
                     margin-bottom: 0;
@@ -469,6 +533,9 @@ footer {
             @include purple-btn;
             @include tablet-only {
                 max-width: 45%;
+            }
+            @include desktop-only {
+                max-width: 35%;
             }
         }
     }
