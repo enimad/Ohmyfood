@@ -41,7 +41,7 @@ $footer-background-color: rgb(59, 59, 59);
 }
 
 @mixin tablet-only {
-    @media all and (min-width: 641px) and (max-width: 1024px) { 
+    @media all and (min-width: 641px) { 
         @content; 
     } 
 }
@@ -160,16 +160,10 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    &.main--row {
-        @include desktop-only {
-            flex-direction: row
-        }
+    @include desktop-only {
+        padding: 0 50px;
     }
     & .main__first-content {
-        @include desktop-only {
-            width: 30%;
-            margin-left: 20px;
-        }
         & .main__first-content-title {
             @include index-title-font;
         }
@@ -178,10 +172,6 @@ main {
             @include tablet-only {
                 display: flex;
                 justify-content: space-around;
-            }
-            @include desktop-only {
-                display: flex;
-                flex-wrap: wrap;
             }
             & .main__first-content-nav--classic-card {
                 display: flex;
@@ -199,7 +189,7 @@ main {
                     color: white;
                     background-color: $color-one;
                     border-radius: 100%;
-                    padding: 5px 7px 1px;
+                    padding: 5px 7px 3px;
                     font-size: 13px;
                 }
                 & .main__first-content-nav--classic-card-fa {
@@ -235,10 +225,6 @@ main {
                 flex-wrap: wrap;
                 justify-content: space-around;
             }
-            @include desktop-only {
-                display: flex;
-                flex-wrap: wrap;
-            }
             & .main__second-content-card {
                 display: flex;
                 flex-direction: column;
@@ -246,9 +232,6 @@ main {
                 z-index: 1;
                 height: 250px;
                 @include tablet-only {
-                    width: 335px;
-                }
-                @include desktop-only {
                     width: 300px;
                 }
                 & .container-position-new-and-heart {
@@ -274,7 +257,7 @@ main {
                     }
                 }
                 & .main__second-content-card-img {
-                    height: 155px;
+                    height: 145px;
                     position: relative;
                     overflow: hidden;
                     border-top-left-radius: 25px;
@@ -325,9 +308,6 @@ footer {
     @include tablet-only {
         align-items: center;
     }
-    @include desktop-only {
-        align-items: center;
-    }
     & .footer__logo {
         width: 120px;
         height: auto;
@@ -346,10 +326,7 @@ footer {
             margin-bottom: 10px;
         }
         @include desktop-only {
-            display: flex;
             gap: 135px;
-            margin-top: 15px;
-            margin-bottom: 10px;
         }
     }
     & li {
@@ -421,7 +398,7 @@ footer {
     margin-top: -60px;
     @include desktop-only {
         &.main-menu--desktop {
-            padding: 0 150px;
+            padding: 0 120px;
         }
     }
     & .main-menu-title-container {
@@ -451,7 +428,7 @@ footer {
         font-size: 15px;
         font-weight: 400;
         @include tablet-only {
-            margin: 25px 40px 15px;
+            margin: 25px 40px 0;
             background-color: $color-three;
             padding: 13px;
             border-radius: 15px;
@@ -460,6 +437,7 @@ footer {
         }
         @include desktop-only {
             font-size: 18px;
+            background-color: adjust-color($color: $color-three, $lightness: 10%);
         }
     }
     & .main-menu-section-title-deco {
@@ -535,7 +513,8 @@ footer {
                 max-width: 45%;
             }
             @include desktop-only {
-                max-width: 35%;
+                max-width: 30%;
+                min-width: 20%;
             }
         }
     }
