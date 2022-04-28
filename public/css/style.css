@@ -82,6 +82,11 @@ header .header__content .header__button {
   min-width: 35%;
   height: 48px;
   margin-bottom: 50px;
+  box-shadow: 0px 5px 5px #b6b6b6;
+}
+header .header__content .header__button:hover {
+  opacity: 0.9;
+  box-shadow: 0px 8px 8px #b6b6b6;
 }
 @media all and (min-width: 641px) {
   header .header__content .header__button {
@@ -514,6 +519,11 @@ footer li .fa-hands-helping {
   min-width: 35%;
   height: 48px;
   margin-bottom: 50px;
+  box-shadow: 0px 5px 5px #b6b6b6;
+}
+.main-menu .main-menu-btn-container .main-menu-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0px 8px 8px #b6b6b6;
 }
 @media all and (min-width: 641px) {
   .main-menu .main-menu-btn-container .main-menu-btn {
