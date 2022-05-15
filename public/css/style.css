@@ -83,6 +83,7 @@ header .header__content .header__button {
   height: 48px;
   margin-bottom: 50px;
   box-shadow: 0px 5px 5px #b6b6b6;
+  cursor: pointer;
 }
 header .header__content .header__button:hover {
   opacity: 0.9;
@@ -226,14 +227,14 @@ main .main__second-content .main__second-content-cards-container .main__second-c
     width: 300px;
   }
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .container-position-new-and-heart {
+main .main__second-content .main__second-content-cards-container .container-position-new-and-heart {
   display: flex;
   justify-content: flex-end;
   position: relative;
   top: 10px;
   margin-right: 15px;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .container-position-new-and-heart .main__second-content--alert-new {
+main .main__second-content .main__second-content-cards-container .container-position-new-and-heart .main__second-content--alert-new {
   background-color: #99E2D0;
   color: #2c9c81;
   font-weight: bold;
@@ -248,21 +249,21 @@ main .main__second-content .main__second-content-cards-container .main__second-c
   z-index: 3;
   margin-bottom: -30px;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-img {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-img {
   height: 145px;
   position: relative;
   overflow: hidden;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-img img {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-img img {
   width: 100%;
   position: absolute;
   top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-text {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-text {
   background-color: white;
   padding-top: 10px;
   padding-left: 10px;
@@ -270,22 +271,94 @@ main .main__second-content .main__second-content-cards-container .main__second-c
   border-bottom-right-radius: 15px;
   box-shadow: 0px 2px 7px #d6d6d6;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-text h2 {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-text h2 {
   font-size: 18px;
   margin-top: 0;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-text p {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-text p {
   margin-top: -10px;
   margin-bottom: -10px;
 }
-main .main__second-content .main__second-content-cards-container .main__second-content-card .main__second-content-card-text span {
+main .main__second-content .main__second-content-cards-container .main__second-content-card-text span {
   position: relative;
   bottom: 33px;
   font-size: x-large;
   font-weight: 100;
+  cursor: pointer;
+}
+main .main__second-content .main__second-content-cards-container .main__second-content-card-text .fullheart {
+  position: absolute;
+  font-weight: 900;
+  background-image: linear-gradient(to bottom, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+@keyframes heart-fill {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  35% {
+    transform: scale(0.15);
+  }
+  50% {
+    transform: scale(0.35);
+  }
+  75% {
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 main .main__second-content .main__second-content-cards-container .main__second-content--last-card {
   margin-bottom: 40px;
+}
+main .main__second-content .main__second-content-cards-container .checkbox-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  right: 20px;
+  bottom: 20px;
+}
+main .main__second-content .main__second-content-cards-container .toggle-content::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 23px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+main .main__second-content .main__second-content-cards-container .default-checkbox {
+  display: none;
+}
+main .main__second-content .main__second-content-cards-container .default-checkbox:checked + .toggle-content::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 23px;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(to bottom, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  animation: heart-fill 300ms ease-out both;
 }
 
 footer {
@@ -409,6 +482,49 @@ footer li .fa-hands-helping {
   font-weight: 100;
   margin-right: 30px;
 }
+.main-menu .main-menu-title-container .checkbox-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.main-menu .main-menu-title-container .toggle-content::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 23px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+.main-menu .main-menu-title-container .default-checkbox {
+  display: none;
+}
+.main-menu .main-menu-title-container .default-checkbox:checked + .toggle-content::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 23px;
+  width: auto;
+  height: auto;
+  background-image: linear-gradient(to bottom, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  animation: heart-fill 300ms ease-out both;
+}
 .main-menu .main-menu-section-title {
   margin: 25px 15px 15px;
   font-size: 15px;
@@ -427,7 +543,6 @@ footer li .fa-hands-helping {
 @media all and (min-width: 1025px) {
   .main-menu .main-menu-section-title {
     font-size: 18px;
-    background-color: #c1ede2;
   }
 }
 .main-menu .main-menu-section-title-deco {
@@ -520,6 +635,7 @@ footer li .fa-hands-helping {
   height: 48px;
   margin-bottom: 50px;
   box-shadow: 0px 5px 5px #b6b6b6;
+  cursor: pointer;
 }
 .main-menu .main-menu-btn-container .main-menu-btn:hover {
   opacity: 0.9;
