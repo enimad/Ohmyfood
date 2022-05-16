@@ -70,6 +70,51 @@ a {
     color: black;
 }
 
+// LOADING PAGE
+
+.loader {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    opacity: 0.7;
+    background: $color-btn;
+    // ANIMATION LOADER
+    animation: disappear 300ms ease-out 3s forwards;
+    & .spinner {
+        font-size: 120px;
+        font-weight: 900;
+        color: $color-three;
+        animation: spin 1000ms ease infinite forwards;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//HEADER DE LA PAGE D'ACCUEIL
+
 header {
     margin-bottom: 20px;
     & .header__logo-container {
@@ -379,6 +424,7 @@ main {
                 -webkit-background-clip: text;
                 color: transparent;
                 cursor: pointer;
+                //ANIMATION  COEUR QUI SE REMPLIT
                 animation: heart-fill 300ms ease-out both;
             }
 
@@ -552,6 +598,7 @@ footer {
             -webkit-background-clip: text;
             color: transparent;
             cursor: pointer;
+            // ANIMATION COEUR QUI SE REMPLIT
             animation: heart-fill 300ms ease-out both;
         }
 
@@ -571,6 +618,28 @@ footer {
         @include desktop-only {
             font-size: 18px;
         }
+        @keyframes slide-in-bottom {
+            0% {
+              transform: translateY(15px);
+              opacity: 0;
+            }
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+        opacity: 0;
+        // ANIMATION SLIDE MENU
+        animation: slide-in-bottom 1000ms ease forwards;
+        &.d1 {
+            animation-delay: 0;
+        }
+        &.d2 {
+            animation-delay: 200ms;
+        }
+        &.d3 {
+            animation-delay: 400ms;
+        }
     }
     & .main-menu-section-title-deco {
         border-top: solid $color-three;
@@ -582,6 +651,18 @@ footer {
         }
         @include desktop-only {
             margin: -13px 15px -5px;
+        }
+        opacity: 0;
+        // ANIMATION SLIDE MENU
+        animation: slide-in-bottom 1000ms ease forwards;
+        &.d1 {
+            animation-delay: 0;
+        }
+        &.d2 {
+            animation-delay: 200ms;
+        }
+        &.d3 {
+            animation-delay: 400ms;
         }
     }
     & .main-menu-sections-container {
@@ -596,6 +677,7 @@ footer {
             box-shadow: 0px 2px 7px #d6d6d6;
             margin: 15px 15px;
             border-radius: 15px;
+            cursor: pointer;
             @include tablet-only {
                 width: 315px;
             }
@@ -631,6 +713,18 @@ footer {
             & .main-menu-choices-details :nth-child(2) {
                 font-weight: bold;
                 font-size: 14px;
+            }
+            opacity: 0;
+            // ANIMATION SLIDE MENU
+            animation: slide-in-bottom 1000ms ease forwards;
+            &.d1 {
+                animation-delay: 0ms;
+            }
+            &.d2 {
+                animation-delay: 200ms;
+            }
+            &.d3 {
+                animation-delay: 400ms;
             }
         }
     }
