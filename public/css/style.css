@@ -640,11 +640,11 @@ footer li .fa-hands-helping {
 }
 .main-menu .main-menu-sections-container .main-menu-choices {
   background-color: white;
-  padding: 10px;
   box-shadow: 0px 2px 7px #d6d6d6;
   margin: 15px 15px;
   border-radius: 15px;
   cursor: pointer;
+  overflow: hidden;
   opacity: 0;
   animation: slide-in-bottom 1000ms ease forwards;
 }
@@ -662,35 +662,66 @@ footer li .fa-hands-helping {
   margin-top: 0;
   margin-bottom: -7px;
   font-size: 16px;
-  max-width: 80%;
-}
-@media all and (min-width: 1025px) {
-  .main-menu .main-menu-sections-container .main-menu-choices h2 {
-    margin: 0 25px -7px;
-    max-width: 100%;
-  }
-}
-.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-@media all and (min-width: 1025px) {
-  .main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details {
-    margin: 0 25px;
-  }
-}
-.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details p {
-  font-size: 13px;
-  margin-bottom: 0;
-  max-width: 80%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details :nth-child(2) {
-  font-weight: bold;
+.main-menu .main-menu-sections-container .main-menu-choices .selection {
+  display: none;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details .main-menu-choices-details-text {
+  margin: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details .main-menu-choices-details-text .menu-texte {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details .main-menu-choices-price {
+  margin-left: auto;
+  margin-top: 25px;
+  margin-right: 15px;
   font-size: 14px;
+  font-weight: 900;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .main-menu-choices-details .main-menu-choices-checked {
+  display: flex;
+  width: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  color: white;
+  min-height: 66px;
+  transition: 400ms;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .selection:checked + .main-menu-choices-details .main-menu-choices-checked {
+  min-width: 60px;
+  background-color: #99E2D0;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .selection:not(:checked) + .main-menu-choices-details .main-menu-choices-checked {
+  min-width: 0px;
+  background-color: #99E2D0;
+}
+.main-menu .main-menu-sections-container .main-menu-choices .selection:checked + .main-menu-choices-details .main-menu-choices-checked-icon {
+  animation: roll 400ms linear forwards;
+}
+@keyframes roll {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 .main-menu .main-menu-sections-container .main-menu-choices.d1 {
   animation-delay: 0ms;
@@ -718,6 +749,7 @@ footer li .fa-hands-helping {
   margin-bottom: 50px;
   box-shadow: 0px 5px 5px #b6b6b6;
   cursor: pointer;
+  transition: 200ms;
 }
 .main-menu .main-menu-btn-container .main-menu-btn:hover {
   opacity: 0.9;
