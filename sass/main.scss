@@ -170,6 +170,7 @@ header {
             @include purple-btn;
             box-shadow: 0px 5px 5px #b6b6b6;
             cursor: pointer;
+            transition: 200ms;
             &:hover {
                 opacity: 0.9;
                 box-shadow: 0px 8px 8px #b6b6b6;
@@ -287,6 +288,14 @@ main {
                 @include tablet-only {
                     width: 300px;
                 }
+                .card_anchor {
+                    border-radius: 40px;
+                    transition: 200ms;
+                    &:hover {
+                        opacity: 0.9;
+                        box-shadow: 0px 8px 8px #b6b6b6;
+                    }
+                }
             }
             & .container-position-new-and-heart {
                 display: flex;
@@ -328,6 +337,7 @@ main {
                 background-color: white;
                 padding-top: 10px;
                 padding-left: 10px;
+                padding-bottom: 20px;
                 border-bottom-left-radius: 15px;
                 border-bottom-right-radius: 15px;
                 box-shadow: 0px 2px 7px #d6d6d6;
@@ -381,11 +391,9 @@ main {
             // COEUR QUI SE REMPLIT AU CLIC
             .checkbox-container {
                 position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                right: 20px;
-                bottom: 20px;
+                margin-left: auto;
+                margin-right: 20px;
+                bottom: 45px;
             }
 
             .toggle-content::before {
@@ -425,7 +433,7 @@ main {
                 color: transparent;
                 cursor: pointer;
                 //ANIMATION  COEUR QUI SE REMPLIT
-                animation: heart-fill 300ms ease-out both;
+                animation: heart-fill 600ms ease-out both;
             }
 
         }
@@ -599,7 +607,7 @@ footer {
             color: transparent;
             cursor: pointer;
             // ANIMATION COEUR QUI SE REMPLIT
-            animation: heart-fill 300ms ease-out both;
+            animation: heart-fill 600ms ease-out both;
         }
 
     }       
@@ -632,9 +640,6 @@ footer {
         opacity: 0;
         // ANIMATION SLIDE ENTRANCE TITRES DES SECTIONS DU MENU
         animation: slide-in-bottom 1000ms ease forwards;
-        &.d1 {
-            animation-delay: 0;
-        }
         &.d2 {
             animation-delay: 200ms;
         }
@@ -656,9 +661,6 @@ footer {
         opacity: 0;
         // ANIMATION SLIDE ENTRANCE DECOS TITRES DU MENU
         animation: slide-in-bottom 1000ms ease forwards;
-        &.d1 {
-            animation-delay: 0;
-        }
         &.d2 {
             animation-delay: 200ms;
         }
@@ -680,16 +682,20 @@ footer {
             cursor: pointer;
             overflow: hidden;
             opacity: 0;
+            border: none;
+            padding: 0;
             @include tablet-only {
                 width: 315px;
             }
             @include desktop-only {
                 margin: 30px 15px;
             }
-            & h2 {
-                margin-top: 0;
-                margin-bottom: -7px;
+            & .h2 {
+                display: block;
+                margin-top: 5px;
+                margin-bottom: 0px;
                 font-size: 16px;
+                font-weight: 900;
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
@@ -701,12 +707,14 @@ footer {
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                p {
+                .p {
+                    display: block;
                     font-size: 13px;
-                    margin-bottom: 0;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
                 }
                 .main-menu-choices-details-text {
-                    margin: 10px;
+                    margin: 8px 10px;
                     white-space: nowrap;
                     overflow: hidden;
                     .menu-texte {
@@ -754,9 +762,6 @@ footer {
               }
             // ANIMATION SLIDE ENTRANCE PLATS DU MENU
             animation: slide-in-bottom 1000ms ease forwards;
-            &.d1 {
-                animation-delay: 0ms;
-            }
             &.d2 {
                 animation-delay: 200ms;
             }
